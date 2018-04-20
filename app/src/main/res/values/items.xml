@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <Merchandise-array name="items_list">
-        <item>item = new Merchandise()</item>
-    </Merchandise-array>
-</resources>
