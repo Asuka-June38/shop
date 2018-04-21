@@ -1,7 +1,6 @@
 package asuka_june.shop;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 import static asuka_june.shop.DiscType.CD;
 import static asuka_june.shop.DiscType.DVD;
@@ -20,7 +19,7 @@ public class MerchandiseList extends ArrayList<Merchandise> {
         add(new VideoDiscMerchandise("The walk", 450, "96748584", CD));
         add(new SoftDiscMerchandise("HOMM3", 150, "4956545429", CD));
         add(new SoftDiscMerchandise("Plague inc.", 300, "578574809478", CD));
-        add(new MusicDiscMerchandise("Liebe is fur alle da", 100500, "5382787578", DVD));
+        add(new MusicDiscMerchandise("Liebe ist fur alle da", 100500, "5382787578", DVD));
         add(new MusicDiscMerchandise("Sehnsucht", 404, "607881879294768193", DVD));
         add(new VideoDiscMerchandise("Star wars", 1, "609374912096749192", DVD));
         add(new VideoDiscMerchandise("Alien", 2, "4285827887", DVD));
@@ -30,19 +29,5 @@ public class MerchandiseList extends ArrayList<Merchandise> {
 
     public MerchandiseList(MerchandiseList listOfMerchadise) {
         this.addAll(listOfMerchadise);
-    }
-
-    public createHasList(){
-        ArrayList<HashMap<String, String>> MerchandiseHashList = new ArrayList<>();
-        HashMap<String, String> map;
-        for (Merchandise item:MerchandiseList) {
-            map = new HashMap<>();
-            map.put("Name", item.name);
-            map.put("Subname", "495 501-3545");
-            arrayList.add(map);
-            
-        }
-
-
     }
 }

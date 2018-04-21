@@ -6,7 +6,7 @@ public class Merchandise {
     public Integer price;
     public String barcode;
 
-    public Merchandise(String name, String Subname, Integer price, String barcode){
+    public Merchandise(String name, String subname, Integer price, String barcode){
         this.name = name;
         this.subname = subname;
         this.price = price;
