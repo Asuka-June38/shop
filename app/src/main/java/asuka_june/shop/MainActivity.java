@@ -1,18 +1,15 @@
 package asuka_june.shop;
 
 import android.app.ListActivity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
-import android.widget.TextView;
-
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 public class MainActivity extends ListActivity {
     @Override
@@ -20,29 +17,30 @@ public class MainActivity extends ListActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-//        ListView listView = (ListView) findViewById(R.id.list);
-
         ArrayList<HashMap<String, String>> itemList = new ArrayList<>();
-        for (Merchandise item: new MerchandiseList()) {
+        final ArrayList<Merchandise> ItemList = new MerchandiseList();
+        for (Merchandise item: ItemList) {
             HashMap<String, String> map = new HashMap<>();
             map.put("name", item.name);
             map.put("subname", item.subname);
             itemList.add(map);
         }
-
-
-
         SimpleAdapter adapter = new SimpleAdapter(this, itemList, android.R.layout.simple_list_item_2,
                 new String[] {"name", "subname"},
                 new int[] {android.R.id.text1, android.R.id.text2});
 
         ListView listView = getListView();
-
         listView.setAdapter(adapter);
-
-
-
-
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View itemClicked, int position,
+                                    long id) {
+               Merchandise itemToView = ItemList.get((int)id);
+               Intent intent = new Intent(getApplication(), InformationActivity.class);
+               intent.putExtra(InformationActivity.EXTRA_ITEM, (Parcelable) itemToView);
+               startActivity(intent);
+            }
+        });
     }
 }
 

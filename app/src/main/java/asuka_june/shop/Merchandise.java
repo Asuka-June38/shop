@@ -1,10 +1,10 @@
 package asuka_june.shop;
 
 public class Merchandise {
-    public String name;
-    public String subname;
-    public Integer price;
-    public String barcode;
+    public  String name;
+    public  String subname;
+    public  Integer price;
+    public  String barcode;
 
     public Merchandise(String name, String subname, Integer price, String barcode){
         this.name = name;
@@ -19,4 +19,6 @@ public class Merchandise {
         price = 5;
         barcode = "12345";
     }
+
+
 }
