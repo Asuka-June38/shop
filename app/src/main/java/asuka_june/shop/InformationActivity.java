@@ -14,6 +14,6 @@ public class InformationActivity extends Activity {
 
         Merchandise itemToView = getIntent().getParcelableExtra(EXTRA_ITEM);
         TextView text = (TextView)findViewById(R.id.text);
-        text.setText(itemToView.name);
+        text.setText(itemToView.toString());
     }
 }
