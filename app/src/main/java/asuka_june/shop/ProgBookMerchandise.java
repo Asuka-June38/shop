@@ -12,7 +12,7 @@ public class ProgBookMerchandise extends BookMerchandise implements Parcelable{
     }
     @Override
     public String toString(){
-        return name + "\n" + subname + "\n" + price + "\n" + barcode + "\n" + "Page quantity: " + pageQuantity +
+        return name + "\n" + subname + "\n" + "Price: " + price + "\n" + "Barcode: " + barcode + "\n" + "Page quantity: " + pageQuantity +
                 "\n" + "Programming language: " + language;
     }
 

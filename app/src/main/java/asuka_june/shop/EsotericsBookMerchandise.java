@@ -13,7 +13,7 @@ public class EsotericsBookMerchandise extends BookMerchandise implements Parcela
     }
     @Override
     public String toString(){
-        return name + "\n" + subname + "\n" + price + "\n" + barcode + "\n" + "Page quantity: " + pageQuantity +
+        return name + "\n" + subname + "\n" + "Price: " + price + "\n" + "Barcode: " + barcode + "\n" + "Page quantity: " + pageQuantity +
                 "\n" + "Legal age: " + age;
     }
 

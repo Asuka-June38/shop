@@ -17,6 +17,7 @@ public class MainActivity extends ListActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Linking data with logic and layout.
         ArrayList<HashMap<String, String>> itemList = new ArrayList<>();
         final ArrayList<Merchandise> ItemList = new MerchandiseList();
         for (Merchandise item: ItemList) {
@@ -25,10 +26,13 @@ public class MainActivity extends ListActivity {
             map.put("subname", item.subname);
             itemList.add(map);
         }
+
+        // Creating adapter.
         SimpleAdapter adapter = new SimpleAdapter(this, itemList, android.R.layout.simple_list_item_2,
                 new String[] {"name", "subname"},
                 new int[] {android.R.id.text1, android.R.id.text2});
 
+        // Transport object from one activity to another.
         ListView listView = getListView();
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {

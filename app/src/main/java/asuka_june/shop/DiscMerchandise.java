@@ -12,7 +12,7 @@ public class DiscMerchandise extends Merchandise implements Parcelable{
     }
     @Override
     public String toString(){
-        return name + "\n" + subname + "\n" + price + "\n" + barcode + "\n" + "Disc type: " + disctype;
+        return name + "\n" + subname + "\n" + "Price: " + price + "\n" + "Barcode: " + barcode + "\n" + "Disc type: " + disctype;
     }
 
     @Override
