@@ -10,12 +10,11 @@ public class ProgBookMerchandise extends BookMerchandise implements Parcelable{
         super(name, "Programming", price, barcode, pageQuantity);
         this.language = language;
     }
-//    @Override
-//    public String toString(){
-//        return ProgBookMerchandise.name + "\n" + ProgBookMerchandise.subname + "\n" + ProgBookMerchandise.price +
-//                "\n" + ProgBookMerchandise.barcode + "\n" + "Page quantity: " + ProgBookMerchandise.pageQuantity +
-//                "\n" + "Programming language: " + ProgBookMerchandise.language;
-//    }
+    @Override
+    public String toString(){
+        return name + "\n" + subname + "\n" + price + "\n" + barcode + "\n" + "Page quantity: " + pageQuantity +
+                "\n" + "Programming language: " + language;
+    }
 
     @Override
     public int describeContents() {

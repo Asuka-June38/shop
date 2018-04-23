@@ -11,12 +11,11 @@ public class EsotericsBookMerchandise extends BookMerchandise implements Parcela
         super(name, "Esoterics", price, barcode, pageQuantity);
         this.age = age;
     }
-//    @Override
-//    public String toString(){
-//        return EsotericsBookMerchandise.name + "\n" + EsotericsBookMerchandise.subname + "\n" + EsotericsBookMerchandise.price +
-//                "\n" + EsotericsBookMerchandise.barcode + "\n" + "Page quantity: " + EsotericsBookMerchandise.pageQuantity +
-//                "\n" + "Legal age: " + EsotericsBookMerchandise.age;
-//    }
+    @Override
+    public String toString(){
+        return name + "\n" + subname + "\n" + price + "\n" + barcode + "\n" + "Page quantity: " + pageQuantity +
+                "\n" + "Legal age: " + age;
+    }
 
     @Override
     public int describeContents() {

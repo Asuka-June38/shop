@@ -10,11 +10,10 @@ public class DiscMerchandise extends Merchandise implements Parcelable{
         super(name, subname, price, barcode);
         this.disctype = disctype;
     }
-//    @Override
-//    public String toString(){
-//        return DiscMerchandise.name + "\n" + DiscMerchandise.subname + "\n" + DiscMerchandise.price +
-//                "\n" + DiscMerchandise.barcode + "\n" + "Disc type: " + DiscMerchandise.disctype;
-//    }
+    @Override
+    public String toString(){
+        return name + "\n" + subname + "\n" + price + "\n" + barcode + "\n" + "Disc type: " + disctype;
+    }
 
     @Override
     public int describeContents() {

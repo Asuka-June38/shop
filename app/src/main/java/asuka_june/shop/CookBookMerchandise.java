@@ -12,12 +12,11 @@ public class CookBookMerchandise extends BookMerchandise implements Parcelable{
         this.ingredient = ingredient;
     }
 
-//    @Override
-//    public String toString(){
-//        return CookBookMerchandise.name + "\n" + CookBookMerchandise.subname + "\n" + CookBookMerchandise.price +
-//                "\n" + CookBookMerchandise.barcode + "\n" + "Page quantity: " + CookBookMerchandise.pageQuantity +
-//                "\n" + "Main ingredient: " + CookBookMerchandise.ingredient;
-//    }
+    @Override
+    public String toString(){
+        return name + "\n" + subname + "\n" + price + "\n" + barcode + "\n" + "Page quantity: " + pageQuantity +
+                "\n" + "Main ingredient: " + ingredient;
+    }
 
     @Override
     public int describeContents() {
