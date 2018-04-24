@@ -10,19 +10,12 @@ import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import java.util.ArrayList;
 import java.util.HashMap;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.widget.ListView;
-
 
 public class MainActivity extends ListActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
-
 
         // Getting, sorting and preparing list of items for being viewed.
         final ArrayList<Merchandise> ItemList = new MerchandiseList();
@@ -36,44 +29,47 @@ public class MainActivity extends ListActivity {
                 bookList.add(item);
             }
         }
-        ItemList.clear();
-        ItemList.add(new Header("Books"));
-        ItemList.addAll(bookList);
-        ItemList.add(new Header("Discs"));
-        ItemList.addAll(discList);
-
-
 
         // Linking data with logic and layout.
-        ArrayList<HashMap<String, String>> itemList = new ArrayList<>();
-        for (Merchandise item: ItemList) {
+        final ArrayList<HashMap<String, String>> bookHashList = new ArrayList<>();
+        for (Merchandise item : bookList) {
             HashMap<String, String> map = new HashMap<>();
             map.put("name", item.name);
             map.put("subname", item.subname);
-            itemList.add(map);
+            bookHashList.add(map);
+        }
+        ArrayList<HashMap<String, String>> discHashList = new ArrayList<>();
+        for (Merchandise item : discList) {
+            HashMap<String, String> map = new HashMap<>();
+            map.put("name", item.name);
+            map.put("subname", item.subname);
+            discHashList.add(map);
         }
 
-        // Creating adapter.
-        SimpleAdapter adapter = new SimpleAdapter(this, itemList, android.R.layout.simple_list_item_2,
+        // Create adapter.
+        SeparatedListAdapter Adapter = new SeparatedListAdapter(this);
+        Adapter.addSection("Books", new SimpleAdapter(this, bookHashList, android.R.layout.simple_list_item_2,
                 new String[] {"name", "subname"},
-                new int[] {android.R.id.text1, android.R.id.text2});
-
-
+                new int[] {android.R.id.text1, android.R.id.text2}));
+        Adapter.addSection("Discs", new SimpleAdapter(this, discHashList, android.R.layout.simple_list_item_2,
+                new String[] {"name", "subname"},
+                new int[] {android.R.id.text1, android.R.id.text2}));
 
         ListView listView = getListView();
-        listView.setAdapter(adapter);
+        listView.setAdapter(Adapter);
 
         // Transport object from one activity to another.
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View itemClicked, int position,
                                     long id) {
-               Merchandise itemToView = ItemList.get((int)id);
-                if (itemToView.name != "Books" && itemToView.name != "Discs"){
-                   Intent intent = new Intent(getApplication(), InformationActivity.class);
-                   intent.putExtra(InformationActivity.EXTRA_ITEM, (Parcelable) itemToView);
-                   startActivity(intent);
-               }
+                Integer numberOfItemToView;
+                if ((int)id<=bookHashList.size()+1){numberOfItemToView = (int)id - 1;}
+                else{ numberOfItemToView = (int)id - 2;}
+                Merchandise itemToView = ItemList.get(numberOfItemToView);
+                Intent intent = new Intent(getApplication(), InformationActivity.class);
+                intent.putExtra(InformationActivity.EXTRA_ITEM, (Parcelable) itemToView);
+                startActivity(intent);
             }
         });
     }

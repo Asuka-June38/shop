@@ -46,5 +46,4 @@ public class ProgBookMerchandise extends BookMerchandise implements Parcelable{
             return new ProgBookMerchandise[size];
         }
     }
-
 }

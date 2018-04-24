@@ -7,5 +7,4 @@ public class BookMerchandise extends Merchandise {
         super(name, subname, price, barcode);
         this.pageQuantity = pageQuantity;
     }
-
 }

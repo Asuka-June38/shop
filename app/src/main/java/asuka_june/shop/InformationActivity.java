@@ -12,6 +12,7 @@ public class InformationActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inforamtion);
 
+        // Get item from main activity.xml.
         Merchandise itemToView = getIntent().getParcelableExtra(EXTRA_ITEM);
         TextView text = (TextView)findViewById(R.id.text);
         text.setText(itemToView.toString());

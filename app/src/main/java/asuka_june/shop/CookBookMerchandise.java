@@ -3,7 +3,6 @@ package asuka_june.shop;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-
 public class CookBookMerchandise extends BookMerchandise implements Parcelable{
     public static final Creator<CookBookMerchandise> CREATOR = new CookBookMerchandiseCreator();
     public String ingredient;
@@ -48,6 +47,4 @@ public class CookBookMerchandise extends BookMerchandise implements Parcelable{
             return new CookBookMerchandise[size];
         }
     }
-
-
 }

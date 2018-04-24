@@ -3,7 +3,6 @@ package asuka_june.shop;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-
 public class EsotericsBookMerchandise extends BookMerchandise implements Parcelable{
     public static final Creator<EsotericsBookMerchandise> CREATOR = new EsotericsBookMerchandiseCreator();
     public  Integer age;
@@ -47,5 +46,4 @@ public class EsotericsBookMerchandise extends BookMerchandise implements Parcela
             return new EsotericsBookMerchandise[size];
         }
     }
-
 }

@@ -37,7 +37,6 @@ public class DiscMerchandise extends Merchandise implements Parcelable{
             Integer price = source.readInt();
             String barcode = source.readString();
             DiscType discType = (DiscType)source.readSerializable();
-
             return new DiscMerchandise(name, subname, price, barcode, discType);
         }
         @Override

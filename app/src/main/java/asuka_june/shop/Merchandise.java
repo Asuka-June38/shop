@@ -19,6 +19,4 @@ public class Merchandise {
         price = 5;
         barcode = "12345";
     }
-
-
 }
