@@ -1,3 +1,4 @@
+// This adapter is written by some amazing altruist and now is freely available in the Internet.
 package asuka_june.shop;
 
 import java.util.LinkedHashMap;
